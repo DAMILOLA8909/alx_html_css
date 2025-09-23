@@ -51,4 +51,4 @@ This directory extends the HTML pages with styling:
 
 ## 📌 Author
 **Damilola Ojo**  
-- GitHub: [damilola-ojo](https://github.com/damilola-ojo)  
+- GitHub: [damilola-ojo](https://github.com/DAMILOLA8909)  
