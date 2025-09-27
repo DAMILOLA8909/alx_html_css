@@ -1,0 +1,505 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+/* === HEADER + FIRST SECTION BACKGROUND === */
+header, main > section:first-of-type {
+  background: url("images/Object.png") no-repeat center center/cover;
+  color: #fff;
+  position: relative;
+}
+
+/* Optional overlay for readability */
+header::before,
+main > section:first-of-type::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+header nav,
+main > section:first-of-type > div {
+  position: relative;
+  z-index: 1;
+}
+
+/* === NAVBAR === */
+nav {
+  display: flex;
+  justify-content: space-between; /* logo left, links right */
+  align-items: center;
+  padding: 20px 50px;
+}
+
+nav img {
+  height: 50px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffd700; /* golden hover */
+}
+
+/* === HERO CONTENT === */
+main > section:first-of-type {
+  text-align: center;
+  padding: 120px 20px 80px;
+}
+
+main > section:first-of-type h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+main > section:first-of-type span {
+  display: inline-block;
+  margin: 0 15px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #fdfdfd; /* gold keywords */
+}
+
+/* Button */
+main > section:first-of-type button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 40px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px; /* curved ends */
+  background: purple;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+main > section:first-of-type button:hover {
+  background: #5a0ea1; /* darker purple */
+}
+
+/* === LEARN FROM THE PROS === */
+main > section:first-of-type h2 {
+  margin-top: 80px;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+main > section:first-of-type h2 span {
+  font-size: 2rem;
+  font-weight: 900;
+  color: rgb(227, 23, 227); /* only 'Learn' in purple */
+  border-color: #0a0909;
+}
+
+/* Pros grid */
+main > section:first-of-type > div:last-child > div {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+main > section:first-of-type > div:last-child > div > div {
+  text-align: center;
+  max-width: 180px;
+}
+
+main > section:first-of-type > div:last-child img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+main > section:first-of-type > div:last-child h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+main > section:first-of-type > div:last-child p {
+  font-size: 0.9rem;
+  color: #eee;
+}
+
+/* === GLOBAL / COMMON === */
+section {
+  padding: 90px 40px;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+p {
+  font-size: 1rem;
+  color: #555;
+}
+
+blockquote {
+  font-size: 0.9rem;
+  font-style: italic;
+  line-height: 1.6;
+  color: #333; text-align: center;
+}
+
+section {
+  padding: 30px 30px;
+  background: #0a0909;
+  border-bottom: 20px solid #111111; /* long rectangular border line */
+}
+
+/* === QUOTE SECTION === */
+.quote-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;background-color: #d0b0ed;
+  width: 100%;               /* take full width of the page */
+  max-width: 100%;           /* prevent shrinking */
+}
+
+.quote-section img {
+  max-width: 200px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.quote-content {
+  max-width: 600px;
+}
+
+.quote-content blockquote {
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.quote-content h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.quote-content p {
+  font-size: 0.95rem;
+  color: #777;
+}
+
+/* === VIDEOS SECTION === */
+.videos-section {
+  padding: 80px 40px;
+  background: #fff;
+}
+
+.videos-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+/* Grid for video cards */
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Video card */
+.video-card {
+  background: #fafafa;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Thumbnail with play overlay */
+.video-thumbnail {
+  position: relative;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  display: block;
+}
+
+.video-thumbnail .play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  opacity: 0.9;
+}
+
+/* Card content */
+.video-card h3 {
+  font-size: 1.1rem;
+  margin: 15px;
+  color: #222;
+}
+
+.video-card p {
+  margin: 0 15px 15px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Author row */
+.video-meta {
+  display: flex;
+  align-items: center;
+  margin: 0 15px 15px;
+  gap: 10px;
+}
+
+.video-meta img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.video-meta h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Rating + Duration */
+.video-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 15px 20px;
+}
+
+.video-footer .rating img {
+  height: 16px;
+}
+
+.video-footer .time {
+  font-size: 0.85rem;
+  color: #999;
+}
+
+/* Video-Section border */
+.videos-section {
+  padding: 30px 30px;
+  background: #f4f4f6;
+  border-bottom: 20px solid #050120; /* long rectangular border line */
+}
+
+/* Membership Section */
+.membership-section {
+  background: #fff;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.membership-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 60px;
+}
+
+/* Membership Section */
+.membership-section {
+  background: #010e1b;   /* navy blue */
+  padding: 80px 40px;
+  text-align: center;
+  color: white;          /* default text color */
+}
+
+membership-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 60px;
+  color: #fdfdfd; /* default for the rest of the text */
+}
+
+.membership-section h2 .highlight {
+  color: #a445ed; /* purple just for "Free" */
+}
+
+/* Container for the 4 cards */
+.membership-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+/* Individual card */
+.membership-card {
+  width: 220px;
+  padding: 20px;
+  text-align: center;
+}
+
+.membership-card img {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+.membership-card h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: white;          /* keep text visible */
+}
+
+.membership-card p {
+  font-size: 0.95rem;
+  color: #ddd;           /* lighter grey for contrast */
+  line-height: 1.5;
+}
+
+/* Button */
+.membership-section button {
+  background-color: #a445ed;   /* purple button */
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.membership-section button:hover {
+  background-color: #7b2ccf;
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: 80px 0;
+  background-color: #fff; /* white background */
+  text-align: center;
+  border-top: 2px solid #071629;   /* rectangular border at top */
+  border-bottom: 2px solid #071629; /* rectangular border at bottom */
+}
+
+.faq-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 60px;
+  color: #071629; /* dark blue */
+}
+
+.faq-container {
+  display: flex;
+  justify-content: center;
+  gap: 60px; /* spacing between columns */
+  flex-wrap: wrap; /* responsive on smaller screens */
+}
+
+.faq-column {
+  flex: 1;
+  max-width: 500px;
+  text-align: left;
+}
+
+.faq-item {
+  margin-bottom: 40px;
+}
+
+.faq-item h3 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #071629;
+  margin-bottom: 15px;
+}
+
+.faq-item p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Footer Section */
+footer {
+  background-color: #071629; /* dark navy background */
+  padding: 40px 0;
+  text-align: center;
+  color: #fff;
+}
+
+footer section {
+  max-width: 1200px;
+  margin: 0 auto;background-color: #071629;
+}
+
+footer .footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* makes it responsive */
+  margin-bottom: 20px;
+}
+
+footer .footer-top img {
+  height: 40px; /* adjust logo size */
+}
+
+footer .social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+footer .social-icons i {
+  font-size: 1.5rem;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+footer .social-icons i:hover {
+  color: #C271FF; /* purple hover color */
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: #fff;
+  margin-top: 20px;
+  opacity: 0.7;
+}
+
