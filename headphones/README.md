@@ -75,7 +75,7 @@ headphones/
 4. For the live version, visit:
 👉 https://damilola8909.github.io/alx_html_css/headphones/
 
-##🧠 Technical Notes
+## 🧠 Technical Notes
 
 CSS Variables used for color consistency and maintainability
 Animations: Implemented with keyframes and smooth transitions
@@ -83,7 +83,7 @@ Form Validation: Done via JavaScript (no page reload)
 Scroll Reveal: Section items appear dynamically as you scroll
 Custom Fonts: Loaded with @font-face from local assets
 
-##🛠️ Future Improvements
+## 🛠️ Future Improvements
 
 Backend integration for sending contact form data
 Add accessibility features (ARIA roles, labels)
@@ -91,14 +91,14 @@ Implement dark/light mode toggle
 Use CSS Grid for even more flexible layouts
 Optimize for Core Web Vitals and performance
 
-##👤 Author
+## 👤 Author
 Damilola Ojo
 📂 GitHub: @DAMILOLA8909
 
-🌍 Live Page: Headphones Landing Page
+## 🌍 Live Page: Headphones Landing Page
 This project was developed as part of the ALX Front-End curriculum to demonstrate mastery of responsive design, accessibility, and clean UI development.
 
-🧾 License
+## 🧾 License
 
 This project is open source and available under the MIT License
 .
