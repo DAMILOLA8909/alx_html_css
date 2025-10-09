@@ -1,0 +1,686 @@
+@font-face {
+  font-family: 'MyCustomFont1';
+  src: url('fonts/spincycle_ot.otf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'MyCustomFont2';
+  src: url('fonts/SourceSansPro-Regular.otf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'MyCustomFont3';
+  src: url('fonts/SourceSansPro-Bold.otf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'holberton_school-icon';
+  src:  url('fonts/holberton_school-icon.eot');
+  src:  url('fonts/holberton_school-icon.eot?#iefix') format('embedded-opentype'),
+        url('fonts/holberton_school-icon.ttf') format('truetype'),
+        url('fonts/holberton_school-icon.woff') format('woff'),
+        url('fonts/holberton_school-icon.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ========== RESET ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========== VARIABLES ========== */
+:root {
+  --primary-color: #ffffff;
+  --accent-color: #FF6565;
+  --max-width: 1000px;
+  --font-main: 'MyCustomFont2';
+}
+
+/* ========== BASE ========== */
+body {
+  font-family: var(--font-main);
+  background-color: #000;
+  color: var(--primary-color);
+
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ========== HEADER / NAVBAR ========== */
+.Overlay { background: url("images/headphones_hero_1.jpg") no-repeat center center/cover;
+  color: #fff;
+  position: relative;}
+
+.header {
+ 
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo img {
+  width: 32px;
+  height: 32px;
+}
+
+.logo span {
+    font-family: 'MyCustomFont1'; 
+  font-weight: bold;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  transition: color 0.3s;
+  text-transform: lowercase;
+}
+
+.nav-links a:hover,
+.nav-links a:active {
+  color: var(--accent-color);
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+  text-align: center;
+  color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 200px; /* 👈 shifts everything downward */
+  padding-bottom: 80px; /* keep bottom spacing balanced */
+  flex-grow: 1;
+  width: 100%; height: 100%;
+    
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-size: 2.0rem;
+  font-family: 'MyCustomFont3';
+  font-weight: 700px;
+  margin-bottom: 0rem;
+}
+
+.hero .description {
+  font-size: 1rem;
+  font-weight: 500;
+  padding-top: 40px;
+  color: #ddd;
+  margin-bottom: 1.8rem;
+}
+
+.cta-btn {
+  background-color: var(--accent-color);
+  border: none;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  margin-top: 50px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 1.6rem;
+  transition: opacity 0.3s;
+}
+
+.cta-btn:hover,
+.cta-btn:active {
+  opacity: 0.9;
+}
+
+.hero .description {
+  font-size: 0.9rem;
+  color: #ccc;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 18px;
+  cursor: pointer;
+  z-index: 1000; /* Keeps it above menu */
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 480px) {
+  /* Move hamburger to the right edge */
+  .menu-toggle {
+    position: absolute;
+    right: 14rem;
+    top: 0.5rem;
+    display: flex;
+  }
+.navbar {
+    position: relative;
+    justify-content: center; /* centers logo area */
+  }
+
+  /* Center the logo only on mobile */
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    gap: 1rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  /* Animate hamburger to "X" */
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  .hero {
+    padding: 80px 10px 40px;
+  }
+
+  .hero h1 {
+    font-size: 1.4rem;
+  }
+
+  .hero .subtitle {
+    font-size: 0.8rem;
+  }
+
+  .hero .description {
+    font-size: 0.6rem;
+  }
+
+  .cta-btn {
+    width: 50%;
+  }
+}
+
+/* ========== WHAT WE DO SECTION ========== */
+.what-we-do {
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.what-we-do h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: 'MyCustomFont3';
+  color: #0b162b;
+  margin-bottom: 1.5rem;
+}
+
+.what-we-do .intro-text {
+  max-width: 800px;
+  margin: 0 auto 4rem auto;
+  color: #2c2c2c;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.services {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.service {
+  flex: 1 1 200px;
+  max-width: 220px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'holberton_school-icon' !important;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  font-size: 5rem; /* 👈 increase this value to make all icons bigger */
+  color: #FF6565; /* optional */
+}
+
+
+/* Individual icons */
+.icon-sound::before {
+  content: "\e90e";
+}
+.icon-video::before {
+  content: "\e910";
+}
+.icon-music::before {
+  content: "\e90d";
+}
+.icon-hearing::before {
+  content: "\e909";
+}
+.icon-twitter::before {
+  content: "\e90f";
+}
+.icon-instagram::before {
+  content: "\e90a";
+}
+.icon-facebook::before {
+  content: "\e908";
+}
+
+
+.service img {
+  width: 60px;
+  height: auto;
+  margin-bottom: 1rem;
+  filter: invert(38%) sepia(96%) saturate(7474%) hue-rotate(340deg) brightness(101%) contrast(101%);
+}
+
+.service h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'MyCustomFont3';
+  color: #0b162b;
+  margin-bottom: 0.5rem;
+}
+
+.service p {
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .services {
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
+  .service {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .what-we-do {
+    padding: 60px 15px;
+  }
+
+  .what-we-do h2 {
+    font-size: 1.5rem;
+  }
+
+  .services {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service {
+    max-width: 250px;
+  }
+}
+
+/* ========== Our Result SECTION ========== */
+.our-results {
+  background-color: #fff;
+  background: url("images/headphones_hero_2.jpg") /*no-repeat center center/cover*/;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.our-results h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: 'MyCustomFont3';
+  color: #fff;
+  padding-top: 60px;
+  margin-bottom: 1.5rem;
+}
+
+.our-results .intro-text {
+  max-width: 800px;
+  margin: 0 auto 4rem auto;
+  color: #fff;
+  font-size: 1rem;
+  padding-top: 60px;
+  padding-bottom: 20px;
+  line-height: 1.6;
+}
+
+.result-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding-top: 40px;
+  gap: 2rem;
+}
+
+
+.pentagon-img {
+  position: relative;
+  width: 180px;
+  height: 180px;
+}
+
+.pentagon-img img {
+  width: 100%;
+  height: auto;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.overlay-text h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-family: "MyCustomFont3";
+}
+
+.overlay-text p {
+  margin: 0.3rem 0 0;
+  font-size: 0.6rem;
+}
+
+
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 480px) {
+
+  .our-results {
+    padding: 60px 15px;
+    text-align: center;
+  }
+
+  .our-results h2 {
+    display: none; /* 👈 hides the heading on small screens */
+  }
+
+  .our-results .intro-text {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    
+    padding: 1rem;
+  }
+
+  .result-wrapper {
+    flex-direction: column;  /* 👈 stack pentagons vertically */
+    align-items: center;     /* 👈 center each pentagon horizontally */
+    gap: 1.5rem;             /* 👈 add spacing between them */
+  }
+
+  .pentagon-img {
+    width: 78px;            /* optional: resize slightly smaller */
+    height: auto;
+  }
+
+  .pentagon-img img {
+    width: 100%;
+    height: auto;
+  }
+
+   .pentagon-img {
+    transition: transform 0.3s ease;
+  }
+  .pentagon-img:hover {
+    transform: scale(1.05);
+  }
+
+  .overlay-text {
+  position: absolute;
+  top: 60%;
+  left: 40%;
+  transform: translate(-30%, -60%);
+  text-align: center;}
+
+  .overlay-text h3 {
+    font-size: 1.1rem;
+  }
+
+  .overlay-text p {
+    font-size: 0.3rem;
+  }
+}
+
+/* ========== CONTACT SECTION ========== */
+.contact {
+  background-color: #fff;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.contacts h2 {
+  font-family: 'MyCustomFont3';
+  font-size: 2rem;
+  font-weight: 700;
+  color: #071629;
+  margin-bottom: 1rem;
+}
+
+/* Contact Form */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 60%;
+  padding: 0.6rem 0;                  /* top-bottom spacing only */
+  border: none;                       /* remove box borders */
+  border-bottom: 1px solid #999;      /* underline only */
+  background: transparent;  
+  color: #071629;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #071629;
+  font-size: 0.9rem;
+  font-family: 'MyCustomFont2';
+  position: relative;
+  top: 5px; /* 👈 move placeholder downward */
+}
+.form-group1 textarea {
+    position: relative;
+    top: 10px; /* 👈 move textarea downward */
+}
+
+/* On focus */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 1px solid #FF6565;
+  box-shadow: 0 0 5px #FF6565;
+}
+
+/* Submit button */
+.btn-submit {
+  background-color: #FF6565;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 300;
+  border: none;
+  border-radius: 30px;
+  padding: 0.7rem 1.5rem;
+  margin-top: 30px;
+  cursor: pointer;
+  width: auto;         /* 👈 make it fit content instead of 100% */
+  align-self: center;  /* 👈 center the button horizontally */
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 480px) {
+  .contact {
+    padding: 60px 15px;
+  }
+
+  .contact h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn-submit {
+    width: 40%;
+  }
+}
+
+/*========== FOOTER SECTION ========== */
+.site-footer {
+  background-color: #071629;
+  padding: 40px 20px;
+  color: #fff;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; /* 👈 pushes icons left & logo right */
+  align-items: center;
+}
+
+.social-media {
+  display: flex;
+  gap: 1.5rem; /* spacing between icons */
+}
+
+.social-media i {
+  font-size: 1.4rem;
+  color: #FFf;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect on icons */
+.social-media i:hover {
+  color: #FF6565;
+}
+
+.footer-logo {
+  width: 12%;   /* 👈 resizes based on container width */
+  min-width: 80px;   /* ensures it doesn’t get too small */
+  height: auto;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 480px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .social-media {
+    justify-content: center;
+  }
+}
+
